@@ -252,12 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68a1c07f3b2a5443b8129f0252de06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  currentHealth: 0
   speed: 0
   rb: {fileID: 0}
   transform: {fileID: 0}
-  pOffset: {fileID: 0}
-  bullet: {fileID: 0}
+  pOffset: {x: 0, y: 0, z: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!50 &264395552
 Rigidbody2D:
   serializedVersion: 4
@@ -617,7 +617,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -686,12 +686,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a3411d504b5414aa7049f8978bb158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  speed: 0
+  currentHealth: 0
+  speed: 5
   rb: {fileID: 0}
   transform: {fileID: 0}
-  pOffset: {fileID: 0}
-  bullet: {fileID: 0}
+  pOffset: {x: 0, y: 0, z: 0}
+  bulletPrefab: {fileID: 0}
+  moveDirec: {x: 0, y: 0, z: 0}
+  gameManagerScript: {fileID: 0}
 --- !u!1 &1757066868
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +708,7 @@ GameObject:
   - component: {fileID: 1757066872}
   - component: {fileID: 1757066871}
   m_Layer: 0
-  m_Name: Large Enemy
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,12 +793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4033cae6d07ae09429c86ee2a7b2bd13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  currentHealth: 0
   speed: 0
   rb: {fileID: 0}
   transform: {fileID: 0}
-  pOffset: {fileID: 0}
-  bullet: {fileID: 0}
+  pOffset: {x: 0, y: 0, z: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!50 &1757066872
 Rigidbody2D:
   serializedVersion: 4
@@ -968,12 +970,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e84ca032dbd704419f138d0deba0442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  currentHealth: 0
   speed: 0
   rb: {fileID: 0}
   transform: {fileID: 0}
-  pOffset: {fileID: 0}
-  bullet: {fileID: 0}
+  pOffset: {x: 0, y: 0, z: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!50 &1834090557
 Rigidbody2D:
   serializedVersion: 4

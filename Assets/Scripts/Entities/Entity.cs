@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     [field: Header("Movenent Settings")]
     public Rigidbody2D rb;
     public Transform transform;
-    public Transform pOffset;
+    public Vector3 pOffset;
 
 
     [field: Header("Object References")]
@@ -21,9 +21,11 @@ public class Entity : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform = GetComponent<Transform>();
+
 
     }
 
