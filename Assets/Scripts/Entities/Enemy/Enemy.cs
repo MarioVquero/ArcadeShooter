@@ -18,6 +18,6 @@ public class Enemy : Entity
 
     public virtual void moveDown(int speed)
     {
-        
+        transform.position += new Vector3(0, speed, 0);
     }
 }

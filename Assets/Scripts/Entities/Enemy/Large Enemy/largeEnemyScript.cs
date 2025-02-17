@@ -13,6 +13,11 @@ public class largeEnemyScript : Entity
     // Update is called once per frame
     void Update()
     {
-        
+        moveDown();
+    }
+
+    public override void moveDown(int speed)
+    {
+        base.moveDown();
     }
 }

@@ -14,6 +14,11 @@ public class SmallShooterScript : Entity
     // Update is called once per frame
     void Update()
     {
-        
+        moveDown(speed);
+    }
+
+    public override void moveDown(int speed)
+    {
+        base.moveDown();
     }
 }
