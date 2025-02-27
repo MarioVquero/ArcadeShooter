@@ -16,8 +16,9 @@ public class Enemy : Entity
         
     }
 
-    public virtual void moveDown(int speed)
+    // Change this to protected virtual
+    protected virtual void moveDown(float speed)
     {
-        transform.position += new Vector3(0, speed, 0);
+        transform.position += new Vector3(speed, 0, 0);
     }
 }

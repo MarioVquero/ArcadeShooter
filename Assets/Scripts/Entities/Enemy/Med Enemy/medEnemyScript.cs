@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class medEnemyScript : Entity
+public class medEnemyScript : Enemy
 {
     // Start is called before the first frame update
     public override void Start()
@@ -13,12 +13,12 @@ public class medEnemyScript : Entity
     // Update is called once per frame
     void Update()
     { 
-        moveDown();
+        moveDown(speed);
         
     }
 
-    public override void moveDown(int speed)
+    protected override void moveDown(float speed)
     {
-        base.moveDown();
+        base.moveDown(speed);
     }
 }
