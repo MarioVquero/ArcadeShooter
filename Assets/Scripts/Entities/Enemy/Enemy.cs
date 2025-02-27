@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : Entity
 {
     // Start is called before the first frame update
+    [field: SerializeField] public List<Transform> bulletSpawnPoints {get; private set;}
+
     public override void Start()
     {
         base.Start();
