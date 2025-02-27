@@ -23,4 +23,5 @@ public class Enemy : Entity
     {
         transform.position += new Vector3(speed, 0, 0);
     }
+
 }

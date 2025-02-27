@@ -14,6 +14,7 @@ public class largeEnemyScript : Enemy
     void Update()
     {
         moveDown(speed); // Pass a speed value here
+        BossShoot();
     }
 
     // Correctly override the moveDown method
@@ -21,5 +22,15 @@ public class largeEnemyScript : Enemy
     {
         base.moveDown(speed); // Call the base method if needed
         // Add any additional behavior here
+    }
+
+    public void BossShoot()
+    {
+
+        foreach(Transform spawns in this.bulletSpawnPoints)
+        {
+            Debug.Log(this.bulletSpawnPoints[0].position);
+
+        }
     }
 }
