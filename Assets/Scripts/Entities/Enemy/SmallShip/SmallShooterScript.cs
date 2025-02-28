@@ -15,10 +15,20 @@ public class SmallShooterScript : Enemy
     void Update()
     {
         moveDown(speed);
+        shoot();
     }
 
     protected override void moveDown(float speed)
     {
         base.moveDown(speed);
+    }
+    protected override void shoot()
+    {
+        base.shoot();
+        // int count = this.bulletSpawnPoints.Count;
+        // for(int i = 0; i < count; i++)
+        // {
+        //     Instantiate(bulletPrefab, this.bulletSpawnPoints[i].transform.position, quaternion.RotateZ(90));
+        // }
     }
 }

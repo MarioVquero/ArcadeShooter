@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -24,4 +25,12 @@ public class Enemy : Entity
         transform.position += new Vector3(speed, 0, 0);
     }
 
+    protected virtual void shoot()
+    {
+        int count = bulletSpawnPoints.Count;
+        for(int i = 0; i < count; i++)
+        {
+            Instantiate(bulletPrefab, bulletSpawnPoints[i].transform.position, quaternion.identity);
+        }
+    }
 }

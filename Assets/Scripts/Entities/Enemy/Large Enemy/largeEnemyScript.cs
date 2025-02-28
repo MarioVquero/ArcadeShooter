@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class largeEnemyScript : Enemy
@@ -14,7 +15,7 @@ public class largeEnemyScript : Enemy
     void Update()
     {
         moveDown(speed); // Pass a speed value here
-        BossShoot();
+        shoot();
     }
 
     // Correctly override the moveDown method
@@ -24,13 +25,13 @@ public class largeEnemyScript : Enemy
         // Add any additional behavior here
     }
 
-    public void BossShoot()
+    protected override void shoot()
     {
-
-        foreach(Transform spawns in this.bulletSpawnPoints)
-        {
-            Debug.Log(this.bulletSpawnPoints[0].position);
-
-        }
+        base.shoot();
+        // int count = this.bulletSpawnPoints.Count;
+        // for(int i = 0; i < count; i++)
+        // {
+        //     Instantiate(bulletPrefab, this.bulletSpawnPoints[i].transform.position, quaternion.RotateZ(90));
+        // }
     }
 }
