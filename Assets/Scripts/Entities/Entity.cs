@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour
 
     [field: Header("Movenent Settings")]
     public Rigidbody2D rb;
-    public Transform transform;
+    public Transform TF;
     public Vector3 pOffset;
 
 
@@ -24,7 +24,7 @@ public class Entity : MonoBehaviour
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform = GetComponent<Transform>();
+        TF = GetComponent<Transform>();
 
 
     }

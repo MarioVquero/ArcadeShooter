@@ -7,7 +7,8 @@ public class Enemy : Entity
 {
     // Start is called before the first frame update
     [field: SerializeField] public List<Transform> bulletSpawnPoints {get; private set;}
-
+    private bool isShooting = true;
+    
     public override void Start()
     {
         base.Start();
@@ -22,15 +23,26 @@ public class Enemy : Entity
     // Change this to protected virtual
     protected virtual void moveDown(float speed)
     {
-        transform.position += new Vector3(speed, 0, 0);
+        // Debug.Log(transform.forward * speed );
+        rb.AddRelativeForce(Vector2.left * speed);
     }
 
-    protected virtual void shoot()
+
+    protected virtual IEnumerator shootBullet()
     {
-        int count = bulletSpawnPoints.Count;
-        for(int i = 0; i < count; i++)
+        while (isShooting)
         {
-            Instantiate(bulletPrefab, bulletSpawnPoints[i].transform.position, quaternion.identity);
+            int count = bulletSpawnPoints.Count;
+            for(int i = 0; i < count; i++)
+            {
+                Debug.Log(i);
+                Quaternion rotation = quaternion.Euler(0,0,45 * i);
+
+                Instantiate(bulletPrefab, bulletSpawnPoints[i].transform.position, rotation);
+            
+            }
+            yield return new WaitForSeconds(1f);
         }
+        
     }
 }

@@ -8,13 +8,14 @@ public class medEnemyScript : Enemy
     public override void Start()
     {
         base.Start();
+        StartCoroutine(shootBullet());
     }
 
     // Update is called once per frame
     void Update()
     { 
         moveDown(speed);
-        shoot();
+        // Debug.Log("pew pew");
     }
 
     protected override void moveDown(float speed)
@@ -22,13 +23,8 @@ public class medEnemyScript : Enemy
         base.moveDown(speed);
     }
 
-    protected override void shoot()
+    protected override IEnumerator shootBullet()
     {
-        base.shoot();
-        // int count = this.bulletSpawnPoints.Count;
-        // for(int i = 0; i < count; i++)
-        // {
-        //     Instantiate(bulletPrefab, this.bulletSpawnPoints[i].transform.position, quaternion.RotateZ(90));
-        // }
+        yield return base.shootBullet();
     }
 }

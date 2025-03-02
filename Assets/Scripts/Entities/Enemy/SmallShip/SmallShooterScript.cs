@@ -9,26 +9,23 @@ public class SmallShooterScript : Enemy
     public override void Start()
     {
         base.Start();
+        StartCoroutine(shootBullet());
     }
 
     // Update is called once per frame
     void Update()
     {
         moveDown(speed);
-        shoot();
     }
 
     protected override void moveDown(float speed)
     {
         base.moveDown(speed);
     }
-    protected override void shoot()
+
+    protected override IEnumerator shootBullet()
     {
-        base.shoot();
-        // int count = this.bulletSpawnPoints.Count;
-        // for(int i = 0; i < count; i++)
-        // {
-        //     Instantiate(bulletPrefab, this.bulletSpawnPoints[i].transform.position, quaternion.RotateZ(90));
-        // }
+        yield return base.shootBullet();
     }
+
 }

@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : Enemy
+public class BulletScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public override void Start()
+    public Rigidbody2D RB2D;
+    public float bulletSpeed = 5f;
+    void Start()
     {
-        base.Start();
+        RB2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveDown(speed);
+        moveBullet();
     }
 
-    protected override void moveDown(float speed)
+    private void moveBullet()
     {
-        base.moveDown(speed);
+        RB2D.AddRelativeForce(Vector2.left * bulletSpeed);
     }
+
+    
 }
